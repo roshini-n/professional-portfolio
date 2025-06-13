@@ -7,7 +7,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Portfolio | Computer Science Graduate",
+  title: "Roshini Naguru - Portfolio",
   description: "Professional portfolio showcasing skills, experience, and projects",
   viewport: "width=device-width, initial-scale=1, maximum-scale=5",
   themeColor: [
