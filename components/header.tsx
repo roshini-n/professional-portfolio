@@ -7,13 +7,14 @@ import { cn } from "@/lib/utils"
 import { Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { ModeToggle } from "@/components/mode-toggle"
 
 const navLinks = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
-  { name: "Experience", href: "#experience" },
+  { name: "Certifications", href: "#certifications" },
   { name: "Contact", href: "#contact" },
 ]
 
@@ -69,30 +70,36 @@ export default function Header() {
               </Link>
             </motion.div>
           ))}
+          <div className="ml-2">
+            <ModeToggle />
+          </div>
         </nav>
 
         {/* Mobile Nav */}
-        <Sheet>
-          <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" className="md:hidden">
-              <Menu className="w-5 h-5" />
-              <span className="sr-only">Toggle menu</span>
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="right" className="w-[280px] sm:w-[350px]">
-            <nav className="flex flex-col gap-4 mt-8">
-              {navLinks.map((link, i) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className="px-2 py-1 text-lg font-medium transition duration-200 rounded-md hover:text-primary"
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </nav>
-          </SheetContent>
-        </Sheet>
+        <div className="flex items-center md:hidden">
+          <ModeToggle />
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon" className="ml-2">
+                <Menu className="w-5 h-5" />
+                <span className="sr-only">Toggle menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[280px] sm:w-[350px]">
+              <nav className="flex flex-col gap-4 mt-8">
+                {navLinks.map((link, i) => (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className="px-2 py-1 text-lg font-medium transition duration-200 rounded-md hover:text-primary"
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+              </nav>
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
     </motion.header>
   )

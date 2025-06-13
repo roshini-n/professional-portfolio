@@ -2,10 +2,9 @@
 
 import { motion } from "framer-motion"
 import { useState } from "react"
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { ArrowUpRight, Github, ExternalLink } from "lucide-react"
+import { ArrowUpRight, Github } from "lucide-react"
 import Link from "next/link"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 
@@ -13,63 +12,58 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription }
 const projects = [
   {
     id: 1,
-    title: "AI Powered Task Manager",
-    description: "A task management application with AI features for task prioritization and time estimation.",
-    image: "/placeholder.svg?height=600&width=800",
-    tags: ["React", "Node.js", "MongoDB", "TensorFlow.js"],
-    githubLink: "https://github.com",
-    liveLink: "https://example.com",
+    title: "ReviewNext - Ongoing",
+    description: "Northwest Missouri State University, Missouri, USA",
+    details: [
+      "Developed a web-based platform enabling user registration, login, and submission, editing, or deletion of reviews and ratings across multiple categories including books, games, movies, and gadgets.",
+      "Integrated third-party image API to allow users to add products with corresponding images under selected categories.",
+      'Designed customizable user profiles featuring bios, "My List," and "My Log" to track user activity and preferences.',
+      "Implemented role-based access control, including visitor mode for non-registered users to browse reviews and ratings.",
+    ],
+    tags: ["Web Development", "API Integration", "User Authentication", "Database Design"],
+    githubLink: "https://github.com/roshini-n/ReviewNext",
     featured: true,
   },
   {
     id: 2,
-    title: "E-commerce Platform",
-    description: "A fully-featured e-commerce platform with product management, cart, and payment processing.",
-    image: "/placeholder.svg?height=600&width=800",
-    tags: ["Next.js", "Stripe", "Tailwind CSS", "Prisma"],
-    githubLink: "https://github.com",
-    liveLink: "https://example.com",
+    title: "Fresh Track App",
+    description: "Northwest Missouri State University, Missouri, USA",
+    details: [
+      "Designed and developed a mobile app to reduce household food waste by tracking food freshness using deep learning and computer vision.",
+      "Utilized a pre-trained MobileNetV2 model to detect and classify fruits and vegetables and estimate expiration dates based on visual data.",
+      "Implemented API integration connecting the ML model with the app to ensure scalability and seamless data flow.",
+      "Demonstrated project management and end-to-end machine learning pipeline skills in a sustainability-focused application.",
+    ],
+    tags: ["Mobile App", "Deep Learning", "Computer Vision", "MobileNetV2"],
+    githubLink: "https://github.com/roshini-n/FreshTrack",
     featured: true,
   },
   {
     id: 3,
-    title: "Real-time Chat Application",
-    description: "A chat application with real-time messaging, user authentication, and media sharing.",
-    image: "/placeholder.svg?height=600&width=800",
-    tags: ["React", "Socket.io", "Express", "Firebase"],
-    githubLink: "https://github.com",
-    liveLink: "https://example.com",
-    featured: false,
+    title: "Medicinal Plant Analysis",
+    description: "Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology, Tamil Nadu, India",
+    details: [
+      "Conducted comprehensive analysis of medicinal plants using RapidMiner to assess suitability for medical applications.",
+      "Delivered the project within 4 months, showcasing effective project management in a machine learning context.",
+      "Provided data-driven insights into plant properties, contributing to research initiatives in herbal medicine and sustainability.",
+    ],
+    tags: ["RapidMiner", "Data Analysis", "Machine Learning", "Research"],
+    githubLink: "https://github.com/roshini-n",
+    featured: true,
   },
   {
     id: 4,
-    title: "Weather Dashboard",
-    description: "A weather application that displays current conditions and forecasts based on location.",
-    image: "/placeholder.svg?height=600&width=800",
-    tags: ["JavaScript", "API", "CSS", "HTML"],
-    githubLink: "https://github.com",
-    liveLink: "https://example.com",
-    featured: false,
-  },
-  {
-    id: 5,
-    title: "Portfolio Website",
-    description: "A professional portfolio website to showcase projects and skills.",
-    image: "/placeholder.svg?height=600&width=800",
-    tags: ["React", "Framer Motion", "Tailwind CSS"],
-    githubLink: "https://github.com",
-    liveLink: "https://example.com",
-    featured: false,
-  },
-  {
-    id: 6,
-    title: "Recipe Finder App",
-    description: "A mobile application for finding and saving recipes based on available ingredients.",
-    image: "/placeholder.svg?height=600&width=800",
-    tags: ["React Native", "Redux", "API"],
-    githubLink: "https://github.com",
-    liveLink: "https://example.com",
-    featured: false,
+    title: "Crop Price Prediction",
+    description: "Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology, Tamil Nadu, India",
+    details: [
+      "Developed a predictive model for crop price forecasting using historical data, achieving accuracy improvements over traditional methods.",
+      "Employed Jupyter Notebooks for data analysis and model development to enhance team collaboration and efficiency.",
+      "Used Python for backend development, streamlining data processing workflows and reducing processing time.",
+      "Applied machine learning algorithms to analyze market trends, supporting data-driven pricing strategies.",
+    ],
+    tags: ["Python", "Jupyter Notebooks", "Predictive Modeling", "Data Analysis"],
+    githubLink: "https://github.com/roshini-n",
+    featured: true,
   },
 ]
 
@@ -87,24 +81,21 @@ function ProjectCard({ project, index, isFeatured = false }: ProjectCardProps) {
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
     >
-      <Card className={`overflow-hidden ${isFeatured ? "md:flex" : ""} h-full`}>
-        <div className={`${isFeatured ? "md:w-1/2" : ""}`}>
-          <div className="relative overflow-hidden aspect-video">
-            <Image
-              src={project.image || "/placeholder.svg"}
-              alt={project.title}
-              fill
-              className="object-cover transition-transform duration-500 hover:scale-105"
-            />
-          </div>
-        </div>
-        <div className={`${isFeatured ? "md:w-1/2" : ""} flex flex-col h-full`}>
+      <Card className="h-full">
+        <div className="flex flex-col h-full">
           <CardHeader>
             <CardTitle>{project.title}</CardTitle>
             <CardDescription>{project.description}</CardDescription>
           </CardHeader>
           <CardContent className="flex-grow">
-            <div className="flex flex-wrap gap-2 mt-2">
+            {project.details && (
+              <ul className="mt-2 space-y-2 list-disc pl-5 text-muted-foreground">
+                {project.details.map((detail, detailIndex) => (
+                  <li key={detailIndex}>{detail}</li>
+                ))}
+              </ul>
+            )}
+            <div className="flex flex-wrap gap-2 mt-4">
               {project.tags.map((tag, tagIndex) => (
                 <Badge key={tagIndex} variant="secondary">
                   {tag}
@@ -119,12 +110,6 @@ function ProjectCard({ project, index, isFeatured = false }: ProjectCardProps) {
                 Code
               </Link>
             </Button>
-            <Button size="sm" asChild>
-              <Link href={project.liveLink} target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="w-4 h-4 mr-2" />
-                Live Demo
-              </Link>
-            </Button>
           </CardFooter>
         </div>
       </Card>
@@ -136,7 +121,7 @@ export default function ProjectsSection() {
   const [showAll, setShowAll] = useState(false)
 
   const featuredProjects = projects.filter((project) => project.featured)
-  const displayedProjects = showAll ? projects : featuredProjects
+  const displayedProjects = showAll ? featuredProjects : featuredProjects.slice(0, 2)
 
   return (
     <section id="projects" className="py-24 md:py-32">
@@ -157,20 +142,10 @@ export default function ProjectsSection() {
         </motion.div>
 
         <div className="grid grid-cols-1 gap-8 mb-10 md:gap-12">
-          {featuredProjects.map((project, index) => (
+          {displayedProjects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} isFeatured={true} />
           ))}
         </div>
-
-        {showAll && (
-          <div className="grid grid-cols-1 gap-6 mb-10 sm:grid-cols-2 lg:grid-cols-3">
-            {projects
-              .filter((project) => !project.featured)
-              .map((project, index) => (
-                <ProjectCard key={project.id} project={project} index={index + featuredProjects.length} />
-              ))}
-          </div>
-        )}
 
         <div className="flex justify-center mt-8">
           <Button variant="outline" onClick={() => setShowAll(!showAll)} size="lg">

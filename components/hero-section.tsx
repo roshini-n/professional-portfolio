@@ -24,19 +24,6 @@ export default function HeroSection() {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-16">
-      {/* Background gradient */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-x-0 top-40 transform-gpu overflow-hidden blur-3xl -z-10">
-          <div
-            className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-primary to-[#9089fc] opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-            style={{
-              clipPath:
-                "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
-            }}
-          />
-        </div>
-      </div>
-
       <div className="container px-4 mx-auto z-10">
         <motion.div
           className="flex flex-col items-center justify-center text-center"
@@ -46,14 +33,14 @@ export default function HeroSection() {
         >
           <motion.div
             variants={item}
-            className="inline-flex items-center px-3 py-1 mb-6 text-sm rounded-full bg-muted border border-primary/20"
+            className="inline-flex items-center px-3 py-1 mb-6 text-sm rounded-full bg-muted/80 backdrop-blur-sm border border-primary/20"
           >
             <Code className="w-4 h-4 mr-2 text-primary" />
             Computer Science Graduate
           </motion.div>
 
           <motion.h1 variants={item} className="text-4xl font-extrabold tracking-tight md:text-6xl mb-4">
-            Hi, I'm <span className="gradient-text">Your Name</span>
+            Hi, I'm <span className="gradient-text">Roshini Naguru</span>
           </motion.h1>
 
           <motion.div variants={item} className="h-12 mb-6 text-xl md:text-2xl font-medium">
@@ -63,7 +50,7 @@ export default function HeroSection() {
                 1500,
                 "I create mobile apps",
                 1500,
-                "I develop AI solutions",
+                "I craft data-driven models",
                 1500,
                 "I design user experiences",
                 1500,
@@ -81,32 +68,32 @@ export default function HeroSection() {
           </motion.p>
 
           <motion.div variants={item} className="flex flex-wrap gap-4 justify-center">
-            <Button asChild size="lg">
+            <Button asChild size="lg" className="backdrop-blur-sm">
               <Link href="#projects">
                 View My Work
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Link>
             </Button>
-            <Button variant="outline" size="lg" asChild>
+            <Button variant="outline" size="lg" asChild className="backdrop-blur-sm">
               <Link href="#contact">Contact Me</Link>
             </Button>
           </motion.div>
 
           <motion.div variants={item} className="flex items-center justify-center gap-4 mt-8">
-            <Link href="https://github.com" target="_blank" rel="noopener noreferrer">
-              <Button variant="ghost" size="icon" className="rounded-full">
+            <Link href="https://github.com/roshini-n" target="_blank" rel="noopener noreferrer">
+              <Button variant="ghost" size="icon" className="rounded-full backdrop-blur-sm">
                 <Github className="w-5 h-5" />
                 <span className="sr-only">GitHub</span>
               </Button>
             </Link>
-            <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-              <Button variant="ghost" size="icon" className="rounded-full">
+            <Link href="https://www.linkedin.com/in/roshininaguru/" target="_blank" rel="noopener noreferrer">
+              <Button variant="ghost" size="icon" className="rounded-full backdrop-blur-sm">
                 <Linkedin className="w-5 h-5" />
                 <span className="sr-only">LinkedIn</span>
               </Button>
             </Link>
-            <Link href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-              <Button variant="ghost" size="icon" className="rounded-full">
+            <Link href="https://x.com/Roshini_1124" target="_blank" rel="noopener noreferrer">
+              <Button variant="ghost" size="icon" className="rounded-full backdrop-blur-sm">
                 <Twitter className="w-5 h-5" />
                 <span className="sr-only">Twitter</span>
               </Button>
@@ -120,7 +107,7 @@ export default function HeroSection() {
           >
             <Link
               href="#about"
-              className="flex items-center justify-center w-10 h-10 rounded-full border border-primary/20"
+              className="flex items-center justify-center w-10 h-10 rounded-full border border-primary/20 backdrop-blur-sm"
             >
               <ArrowRight className="w-5 h-5 rotate-90" />
             </Link>

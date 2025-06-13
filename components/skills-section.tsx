@@ -13,9 +13,8 @@ const skillCategories = {
     { name: "HTML/CSS", level: 95 },
     { name: "JavaScript", level: 90 },
     { name: "React.js", level: 85 },
-    { name: "Next.js", level: 80 },
+
     { name: "TypeScript", level: 75 },
-    { name: "Tailwind CSS", level: 90 },
   ],
   backend: [
     { name: "Node.js", level: 85 },
@@ -23,15 +22,11 @@ const skillCategories = {
     { name: "Express.js", level: 75 },
     { name: "MongoDB", level: 70 },
     { name: "SQL", level: 80 },
-    { name: "GraphQL", level: 65 },
   ],
   tools: [
     { name: "Git/GitHub", level: 90 },
-    { name: "Docker", level: 75 },
     { name: "AWS", level: 70 },
     { name: "CI/CD", level: 65 },
-    { name: "Webpack", level: 60 },
-    { name: "Figma", level: 75 },
   ],
 }
 
@@ -160,7 +155,7 @@ export default function SkillsSection() {
                       </CardHeader>
                       <CardContent>
                         <div className="grid grid-cols-3 gap-4">
-                          {["AI/ML", "Cloud Computing", "Mobile Dev", "DevOps", "UI/UX", "Testing"].map(
+                          {["AI/ML", "Cloud Computing", "Mobile Dev"].map(
                             (tech, index) => (
                               <motion.div
                                 key={index}

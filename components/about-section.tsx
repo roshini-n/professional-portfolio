@@ -1,9 +1,11 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Briefcase, GraduationCap, Award } from "lucide-react"
+import { GraduationCap, Code } from "lucide-react"
 import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
+import ResumeDownloadModal from "./resume-download-modal"
 
 export default function AboutSection() {
   return (
@@ -58,16 +60,9 @@ export default function AboutSection() {
               </Card>
               <Card>
                 <CardContent className="flex flex-col items-center p-6">
-                  <Briefcase className="w-8 h-8 mb-2 text-primary" />
-                  <h4 className="font-medium">Experience</h4>
-                  <p className="text-sm text-center text-muted-foreground">2+ Years</p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="flex flex-col items-center p-6">
-                  <Award className="w-8 h-8 mb-2 text-primary" />
+                  <Code className="w-8 h-8 mb-2 text-primary" />
                   <h4 className="font-medium">Projects</h4>
-                  <p className="text-sm text-center text-muted-foreground">15+ Completed</p>
+                  <p className="text-sm text-center text-muted-foreground">3 Completed</p>
                 </CardContent>
               </Card>
             </div>
@@ -80,33 +75,53 @@ export default function AboutSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative"
           >
-            <div className="animated-gradient-border">
-              <div className="overflow-hidden rounded-lg bg-muted">
-                <Image
-                  src="/placeholder.svg?height=600&width=600"
-                  alt="Profile"
-                  width={600}
-                  height={600}
-                  className="object-cover w-full h-full"
-                />
+            <div className="relative flex justify-center">
+              <div className="relative overflow-hidden border-2 border-primary/20 rounded-md shadow-lg w-full max-w-md">
+                <div className="aspect-[4/3] relative w-full">
+                  <Image
+                    src="https://sjc.microlink.io/1g-02sEIeSuyYFOxTCeW6c4pi3FGnd9oBvNaqOXo70QJZTOvbgCfwrsl9AiLDOIPQfHAHwf7zZGBebtXWu1_fg.jpeg"
+                    alt="Profile"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 500px"
+                    className="object-cover object-center"
+                    priority
+                  />
+                </div>
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <div className="absolute bottom-4 right-4">
+                        <ResumeDownloadModal />
+                      </div>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Download Resume</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
               </div>
             </div>
 
-            <div className="absolute -bottom-4 -right-4 p-4 bg-background border rounded-lg shadow-lg max-w-[280px]">
+            <div className="mt-8 p-4 bg-card border rounded-lg shadow-lg mx-auto max-w-sm">
               <h4 className="mb-2 font-semibold">Education Timeline</h4>
               <ul className="space-y-3">
                 <li className="flex gap-2">
                   <GraduationCap className="flex-shrink-0 w-5 h-5 mt-0.5 text-primary" />
                   <div>
-                    <p className="font-medium">MSc Computer Science</p>
-                    <p className="text-xs text-muted-foreground">University Name, 2022-2024</p>
+                    <p className="font-medium">MS Computer Science</p>
+                    <p className="text-xs text-muted-foreground">
+                      Northwest Missouri State University, Missouri, USA 2024-2025
+                    </p>
                   </div>
                 </li>
                 <li className="flex gap-2">
                   <GraduationCap className="flex-shrink-0 w-5 h-5 mt-0.5 text-primary" />
                   <div>
-                    <p className="font-medium">BSc Computer Science</p>
-                    <p className="text-xs text-muted-foreground">University Name, 2018-2022</p>
+                    <p className="font-medium">B-Tech Computer Science</p>
+                    <p className="text-xs text-muted-foreground">
+                      Vel Tech Rangarajan Dr. Sagunthala R&amp;D Institute of Science and Technology, Tamil Nadu, India
+                      2019-2023
+                    </p>
                   </div>
                 </li>
               </ul>

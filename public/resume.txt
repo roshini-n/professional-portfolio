@@ -1,0 +1,55 @@
+ROSHINI NAGURU
+Computer Science Graduate
+nagururoshini@gmail.com | +1 (660) 528-2685 | Maryville, Missouri, USA
+LinkedIn: linkedin.com/in/roshininaguru | GitHub: github.com/roshini-n
+
+EDUCATION
+---------
+MS Computer Science
+Northwest Missouri State University, Missouri, USA
+2024-2025
+
+B-Tech Computer Science
+Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology, Tamil Nadu, India
+2019-2023
+
+SKILLS
+------
+Programming: JavaScript, TypeScript, Python, HTML/CSS, React.js, Node.js
+Databases: MongoDB, SQL, PostgreSQL
+Tools: Git/GitHub, AWS, CI/CD
+Soft Skills: Problem Solving, Team Collaboration, Communication, Time Management
+
+CERTIFICATIONS
+-------------
+AWS Academy Graduate – Machine Learning Foundations
+AWS Academy Graduate – Data Analytics
+AWS Academy Graduate – Cloud Foundations
+Server-side Development with NodeJS, Express, MongoDB
+CCNA: Introduction to Networks
+Deep Learning AI
+
+PROJECTS
+--------
+ReviewNext
+- Developed a web-based platform enabling user registration, login, and submission, editing, or deletion of reviews and ratings across multiple categories including books, games, movies, and gadgets.
+- Integrated third-party image API to allow users to add products with corresponding images under selected categories.
+- Designed customizable user profiles featuring bios, "My List," and "My Log" to track user activity and preferences.
+- Implemented role-based access control, including visitor mode for non-registered users to browse reviews and ratings.
+
+Fresh Track App
+- Designed and developed a mobile app to reduce household food waste by tracking food freshness using deep learning and computer vision.
+- Utilized a pre-trained MobileNetV2 model to detect and classify fruits and vegetables and estimate expiration dates based on visual data.
+- Implemented API integration connecting the ML model with the app to ensure scalability and seamless data flow.
+- Demonstrated project management and end-to-end machine learning pipeline skills in a sustainability-focused application.
+
+Medicinal Plant Analysis
+- Conducted comprehensive analysis of medicinal plants using RapidMiner to assess suitability for medical applications.
+- Delivered the project within 4 months, showcasing effective project management in a machine learning context.
+- Provided data-driven insights into plant properties, contributing to research initiatives in herbal medicine and sustainability.
+
+Crop Price Prediction
+- Developed a predictive model for crop price forecasting using historical data, achieving accuracy improvements over traditional methods.
+- Employed Jupyter Notebooks for data analysis and model development to enhance team collaboration and efficiency.
+- Used Python for backend development, streamlining data processing workflows and reducing processing time.
+- Applied machine learning algorithms to analyze market trends, supporting data-driven pricing strategies.

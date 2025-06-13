@@ -53,6 +53,16 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        lavender: {
+          DEFAULT: "hsl(267, 70%, 75%)",
+          light: "hsl(267, 80%, 85%)",
+          dark: "hsl(267, 60%, 65%)",
+        },
+        teal: {
+          DEFAULT: "hsl(175, 70%, 41%)",
+          light: "hsl(175, 70%, 50%)",
+          dark: "hsl(175, 70%, 30%)",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
